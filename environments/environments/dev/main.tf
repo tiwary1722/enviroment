@@ -1,9 +1,14 @@
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "~>3.0"
+    }
+  }
+
+  backend "local" {}
+}
+
 provider "azurerm" {
   features {}
 }
-
-resource "azurerm_resource_group" "dev_rg" {
-  name     = "dev-rg"
-  location = "East US"
-}
-echo "# Dev Terraform Config" > main.tf
