@@ -13,4 +13,4 @@ resource "azurerm_storage_account" "dev_storage" {
   account_tier             = "Standard"
   account_replication_type = "LRS"
 }
-echo "# Prod Terraform Config" > main.tf
+echo "# Prod Terraform Config" > main.tfG
