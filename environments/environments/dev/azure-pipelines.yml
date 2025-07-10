@@ -1,0 +1,21 @@
+ttrigger:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - task: TerraformInstaller@1
+    inputs:
+      terraformVersion: '1.5.7'
+
+  - script: terraform -chdir=environments/environments/dev init
+    displayName: 'Terraform Init'
+
+  - script: terraform -chdir=environments/environments/dev plan
+    displayName: 'Terraform Plan'
+
+  - script: terraform -chdir=environments/environments/dev apply -auto-approve
+    displayName: 'Terraform Apply'
