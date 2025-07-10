@@ -1,7 +1,7 @@
 ttrigger:
   branches:
     include:
-      - main
+      - feature/env-setup
 
 pool:
   vmImage: 'ubuntu-latest'
