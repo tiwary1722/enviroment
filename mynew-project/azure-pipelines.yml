@@ -1,0 +1,28 @@
+trigger:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+variables:
+  TF_VERSION: '1.5.0'
+
+steps:
+  - checkout: self
+
+  - task: TerraformInstaller@1
+    displayName: 'Install Terraform'
+    inputs:
+      terraformVersion: '$(TF_VERSION)'
+
+  - script: terraform -chdir=my-project init
+    displayName: 'Terraform Init'
+
+  - script: terraform -chdir=my-project plan
+    displayName: 'Terraform Plan'
+
+  # Optional: Uncomment below to apply changes automatically
+  # - script: terraform -chdir=my-project apply -auto-approve
+  #   displayName: 'Terraform Apply'
