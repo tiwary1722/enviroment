@@ -1,12 +1,16 @@
 name: dhondhu-workflow
 
 on:
- push:
-   -'main'
-   - 'feature/**'
+  push:
+    branches:
+      - main
+      - feature/**
+
 jobs:
- meraphela_workflow:
- name: 'dhondhu_maraj
-  steps:
- -  name: 'dhondhu_maraj print'
-    run: echo hello maraj
+  meraphela_workflow:
+    name: dhondhu_maraj
+    runs-on: ubuntu-latest
+    steps:
+      - name: dhondhu_maraj print
+        run: echo "hello maraj"
+
