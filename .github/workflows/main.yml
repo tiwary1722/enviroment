@@ -9,7 +9,7 @@ on:
 jobs:
   meraphela_workflow:
     name: dhondhu_maraj
-    runs-on: ubuntu-latest
+    runs-on: self-hosted   # 👈 yeh tumhare machine wale runner ko use karega
     steps:
       - name: dhondhu_maraj print
         run: echo "hello maraj"
