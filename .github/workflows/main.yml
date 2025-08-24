@@ -9,4 +9,4 @@ jobs:
  name: 'dhondhu_maraj
   steps:
  -  name: 'dhondhu_maraj print'
-    run: echo hello 
+    run: echo hello maraj
