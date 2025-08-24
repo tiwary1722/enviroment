@@ -1,0 +1,12 @@
+name: dhondhu-workflow
+
+on:
+ push:
+   -'main'
+   - 'feature/**'
+jobs:
+ meraphela_workflow:
+ name: 'dhondhu_maraj
+  steps:
+ -  name: 'dhondhu_maraj print'
+    run: echo hello 
